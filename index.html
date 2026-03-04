@@ -363,6 +363,29 @@ a { text-decoration: none; color: inherit; }
   color: rgba(255,255,255,0.7);
 }
 
+/* Mute toggle button */
+.mute-toggle {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  padding: 0;
+}
+.mute-toggle:hover { background: rgba(0,0,0,0.7); }
+.mute-toggle svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
 /* Hero video is narrower on desktop */
 .hero__video-wrap {
   display: flex;
@@ -1688,6 +1711,8 @@ tr:last-child .comparison__cell {
    MOBILE SPECIFICS
    ============================================ */
 @media (max-width: 767px) {
+  .mute-toggle { width: 36px; height: 36px; bottom: 8px; right: 8px; }
+  .mute-toggle svg { width: 18px; height: 18px; }
   .hero__video-wrap { margin-top: 8px; }
   .hero__video-wrap .video-placeholder { max-width: 260px; max-height: 440px; }
   .talking-stage__video-wrap .video-placeholder { max-width: 260px; max-height: 440px; }
@@ -1975,10 +2000,13 @@ tr:last-child .comparison__cell {
         <span id="viewerCount" style="font-size:13px;color:var(--warm-gray);font-weight:400;"><strong style="color:var(--charcoal-light)">1,243</strong> women are viewing this page right now</span>
       </div>
     </div>
-    <div class="hero__video-wrap reveal reveal-delay-2">
-      <video autoplay muted loop playsinline preload="metadata" style="width:100%;max-width:360px;border-radius:16px;box-shadow:0 24px 60px rgba(42,36,32,0.15);">
+    <div class="hero__video-wrap reveal reveal-delay-2" style="position:relative;">
+      <video id="heroVideo" autoplay muted loop playsinline preload="metadata" style="width:100%;max-width:360px;border-radius:16px;box-shadow:0 24px 60px rgba(42,36,32,0.15);">
         <source src="script1-hero.mp4" type="video/mp4">
       </video>
+      <button class="mute-toggle" data-video="heroVideo" aria-label="Unmute video">
+        <svg viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+      </button>
     </div>
   </div>
 </section>
@@ -2013,10 +2041,13 @@ tr:last-child .comparison__cell {
 <!-- ====== SECTION 3: TALKING STAGE ====== -->
 <section class="talking-stage">
   <div class="container talking-stage__grid">
-    <div class="talking-stage__video-wrap reveal">
-      <video autoplay muted loop playsinline preload="metadata" style="width:100%;max-width:360px;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,0.3);">
+    <div class="talking-stage__video-wrap reveal" style="position:relative;">
+      <video id="talkingVideo" autoplay muted loop playsinline preload="metadata" style="width:100%;max-width:360px;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,0.3);">
         <source src="script9-talking.mp4" type="video/mp4">
       </video>
+      <button class="mute-toggle" data-video="talkingVideo" aria-label="Unmute video">
+        <svg viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+      </button>
     </div>
     <div>
       <div class="section-label talking-stage__label reveal">The talking stage</div>
@@ -2759,6 +2790,43 @@ function updateTimer2() {
 }
 
 updateTimer2();
+</script>
+<script>
+(function() {
+  var mutedIcon = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>';
+  var unmutedIcon = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>';
+  var videos = {
+    heroVideo: document.getElementById('heroVideo'),
+    talkingVideo: document.getElementById('talkingVideo')
+  };
+  document.querySelectorAll('.mute-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var videoId = btn.getAttribute('data-video');
+      var video = videos[videoId];
+      if (!video) return;
+      var svg = btn.querySelector('svg');
+      if (video.muted) {
+        video.muted = false;
+        svg.innerHTML = unmutedIcon;
+        btn.setAttribute('aria-label', 'Mute video');
+        // Mute the other video
+        Object.keys(videos).forEach(function(id) {
+          if (id !== videoId && videos[id]) {
+            videos[id].muted = true;
+            var otherBtn = document.querySelector('.mute-toggle[data-video="' + id + '"] svg');
+            if (otherBtn) otherBtn.innerHTML = mutedIcon;
+            var otherBtnEl = document.querySelector('.mute-toggle[data-video="' + id + '"]');
+            if (otherBtnEl) otherBtnEl.setAttribute('aria-label', 'Unmute video');
+          }
+        });
+      } else {
+        video.muted = true;
+        svg.innerHTML = mutedIcon;
+        btn.setAttribute('aria-label', 'Unmute video');
+      }
+    });
+  });
+})();
 </script>
 </body>
 </html>
