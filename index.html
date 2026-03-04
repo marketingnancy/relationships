@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hello Nancy — She's Not Fine</title>
 <meta name="description" content="When you stop fighting, it's not peace — it's exhaustion. Discover the discreet, lemon-shaped companion 15,000+ women are obsessed with.">
+<link href="https://db.onlinewebfonts.com/c/0dceee6a0d517b74ca0d3fe8e3373315?family=ES+Rebond+Grotesque+TRIAL" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
 <style>
 /* ============================================
    CSS VARIABLES & RESET
@@ -23,8 +24,8 @@
   --nancy-gray-light: #999999;
   --peach-tint: rgba(232,131,107,0.08);
   --peach-tint-strong: rgba(232,131,107,0.15);
-  --font-display: 'Instrument Serif', Georgia, serif;
-  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --font-display: 'ES Rebond Grotesque TRIAL', 'Arial Black', sans-serif;
+  --font-body: 'Fraunces', 'Georgia', serif;
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -73,9 +74,9 @@ a { text-decoration: none; color: inherit; }
   gap: 10px;
   background: var(--nancy-pink);
   color: #fff;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.02em;
   padding: 18px 40px;
   border-radius: 60px;
@@ -167,27 +168,13 @@ a { text-decoration: none; color: inherit; }
 }
 
 .nav__logo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  line-height: 1;
-  gap: 2px;
-  color: var(--nancy-pink);
+  display: block;
 }
 
-.nav__logo-hello {
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.nav__logo-nancy {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 26px;
-  letter-spacing: -0.01em;
+.nav__logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .nav__cta {
@@ -228,8 +215,9 @@ a { text-decoration: none; color: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  font-family: var(--font-display);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--nancy-pink);
@@ -247,6 +235,7 @@ a { text-decoration: none; color: inherit; }
 .hero__headline {
   font-family: var(--font-display);
   font-size: clamp(36px, 6vw, 58px);
+  font-weight: 700;
   line-height: 1.1;
   color: var(--nancy-black);
   margin-bottom: 20px;
@@ -254,7 +243,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .hero__headline em {
-  font-style: italic;
+  font-style: normal;
   color: var(--nancy-pink);
 }
 
@@ -447,8 +436,9 @@ a { text-decoration: none; color: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  font-family: var(--font-display);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--nancy-pink);
@@ -458,13 +448,14 @@ a { text-decoration: none; color: inherit; }
 .section-headline {
   font-family: var(--font-display);
   font-size: clamp(28px, 4.5vw, 42px);
-  line-height: 1.2;
+  font-weight: 700;
+  line-height: 1.1;
   color: var(--nancy-black);
   letter-spacing: -0.01em;
 }
 
 .section-headline em {
-  font-style: italic;
+  font-style: normal;
   color: var(--nancy-pink);
 }
 
@@ -540,7 +531,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .quote-card__text {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 20px;
   font-style: italic;
   line-height: 1.5;
@@ -601,13 +592,14 @@ a { text-decoration: none; color: inherit; }
 .talking-stage__headline {
   font-family: var(--font-display);
   font-size: clamp(28px, 4.5vw, 42px);
-  line-height: 1.2;
+  font-weight: 700;
+  line-height: 1.1;
   margin-bottom: 20px;
   letter-spacing: -0.01em;
 }
 
 .talking-stage__headline em {
-  font-style: italic;
+  font-style: normal;
   color: var(--nancy-pink-light);
 }
 
@@ -620,7 +612,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .talking-stage__punchline {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 22px;
   font-style: italic;
   color: var(--nancy-pink-light);
@@ -719,6 +711,7 @@ a { text-decoration: none; color: inherit; }
 .feature-card__title {
   font-family: var(--font-display);
   font-size: 18px;
+  font-weight: 700;
   margin-bottom: 6px;
   color: var(--nancy-black);
 }
@@ -779,6 +772,7 @@ a { text-decoration: none; color: inherit; }
 .stat__number {
   font-family: var(--font-display);
   font-size: clamp(28px, 4vw, 38px);
+  font-weight: 700;
   color: var(--nancy-pink);
   line-height: 1.1;
 }
@@ -914,7 +908,7 @@ a { text-decoration: none; color: inherit; }
   display: block;
   font-family: var(--font-display);
   font-size: 22px;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0;
 }
 
@@ -977,6 +971,7 @@ tr:last-child .comparison__cell {
   color: var(--nancy-pink);
   font-size: 18px;
   font-family: var(--font-display);
+  font-weight: 700;
 }
 
 .comparison__note {
@@ -1021,7 +1016,7 @@ tr:last-child .comparison__cell {
 .comparison__footer {
   text-align: center;
   margin-top: 36px;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-style: italic;
   font-size: 18px;
   color: var(--nancy-black);
@@ -1069,9 +1064,9 @@ tr:last-child .comparison__cell {
   background: none;
   border: none;
   padding: 24px 0;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 17px;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--nancy-black);
   cursor: pointer;
   text-align: left;
@@ -1156,13 +1151,14 @@ tr:last-child .comparison__cell {
 .final-cta__headline {
   font-family: var(--font-display);
   font-size: clamp(30px, 5vw, 48px);
-  line-height: 1.15;
+  font-weight: 700;
+  line-height: 1.1;
   margin-bottom: 12px;
   position: relative;
   letter-spacing: -0.01em;
 }
 
-.final-cta__headline em { font-style: italic; color: var(--nancy-pink-light); }
+.final-cta__headline em { font-style: normal; color: var(--nancy-pink-light); }
 
 .final-cta__sub {
   font-size: 17px;
@@ -1269,12 +1265,16 @@ tr:last-child .comparison__cell {
 
 .final-cta__logo {
   margin-top: 48px;
-  font-family: var(--font-display);
   font-size: 20px;
   color: rgba(255,255,255,0.3);
 }
 
-.final-cta__logo em { font-style: italic; }
+.final-cta__logo-img {
+  height: 32px;
+  width: auto;
+  filter: brightness(10);
+  opacity: 0.3;
+}
 
 @media (max-width: 560px) {
   .final-cta__steps {
@@ -1331,6 +1331,7 @@ tr:last-child .comparison__cell {
 .sticky-cta__price {
   font-family: var(--font-display);
   font-size: 20px;
+  font-weight: 700;
   color: var(--nancy-black);
   line-height: 1.2;
 }
@@ -1483,12 +1484,13 @@ tr:last-child .comparison__cell {
 .exit-popup__headline {
   font-family: var(--font-display);
   font-size: 26px;
-  line-height: 1.2;
+  font-weight: 700;
+  line-height: 1.1;
   color: var(--nancy-black);
   margin-bottom: 8px;
 }
 
-.exit-popup__headline em { font-style: italic; color: var(--nancy-pink); }
+.exit-popup__headline em { font-style: normal; color: var(--nancy-pink); }
 
 .exit-popup__body {
   font-size: 15px;
@@ -1581,6 +1583,7 @@ tr:last-child .comparison__cell {
 .exit-popup__urgency strong {
   font-family: var(--font-display);
   font-size: 15px;
+  font-weight: 700;
   color: var(--nancy-pink);
   min-width: 42px;
 }
@@ -1611,6 +1614,7 @@ tr:last-child .comparison__cell {
 .price-block__current {
   font-family: var(--font-display);
   font-size: 38px;
+  font-weight: 700;
   color: var(--nancy-black);
 }
 
@@ -1674,8 +1678,8 @@ tr:last-child .comparison__cell {
 .urgency-bar__timer {
   font-family: var(--font-display);
   font-size: 15px;
+  font-weight: 700;
   color: var(--nancy-pink);
-  font-weight: 400;
   min-width: 60px;
 }
 
@@ -1716,28 +1720,16 @@ tr:last-child .comparison__cell {
 }
 
 .footer__logo {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 1;
-  gap: 2px;
+  display: block;
   margin-bottom: 12px;
 }
 
-.footer__logo-hello {
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.7);
-}
-
-.footer__logo-nancy {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 28px;
-  color: rgba(255,255,255,0.7);
+.footer__logo-img {
+  height: 32px;
+  width: auto;
+  display: inline-block;
+  filter: brightness(10);
+  opacity: 0.7;
 }
 
 .footer__tagline {
@@ -1816,6 +1808,7 @@ tr:last-child .comparison__cell {
    MOBILE SPECIFICS
    ============================================ */
 @media (max-width: 767px) {
+  .nav__logo-img { height: 28px; }
   .mute-toggle { width: 36px; height: 36px; bottom: 8px; right: 8px; }
   .mute-toggle svg { width: 18px; height: 18px; }
   .hero__video-wrap { margin-top: 8px; }
@@ -1942,7 +1935,8 @@ tr:last-child .comparison__cell {
 .email-slidein__headline {
   font-family: var(--font-display);
   font-size: 20px;
-  line-height: 1.2;
+  font-weight: 700;
+  line-height: 1.1;
   margin-bottom: 6px;
   color: var(--nancy-black);
 }
@@ -2088,7 +2082,7 @@ tr:last-child .comparison__cell {
 <!-- ====== NAVIGATION ====== -->
 <nav class="nav">
   <div class="container nav__inner">
-    <a href="#" class="nav__logo"><span class="nav__logo-hello">Hello</span><span class="nav__logo-nancy">Nancy</span></a>
+    <a href="https://hellonancy.com" class="nav__logo"><img src="Nancy_Logo_Pink.avif" alt="Nancy" class="nav__logo-img"></a>
     <a href="#cta" class="cta-btn nav__cta">
       Meet Lem
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -2351,7 +2345,7 @@ tr:last-child .comparison__cell {
 <section class="social-proof">
   <div class="container">
     <div class="social-proof__intro reveal">
-      <div class="nancy-logo-placeholder" style="border:none;background:none;"><span style="font-family:var(--font-body);font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--nancy-pink);display:block;">Hello</span><span style="font-family:var(--font-display);font-style:italic;font-size:28px;color:var(--nancy-pink);">Nancy</span></div>
+      <div class="nancy-logo-placeholder" style="border:none;background:none;"><img src="Nancy_Logo_Pink.avif" alt="Hello Nancy" style="height:40px;width:auto;"></div>
     </div>
     <div class="stats-row reveal">
       <div class="stat">
@@ -2527,7 +2521,7 @@ tr:last-child .comparison__cell {
       <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,0.4)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
       Rated 4.7 stars by 15,000+ women — someone new discovers Lem every 25 seconds
     </p>
-    <div class="final-cta__logo reveal reveal-delay-3" style="display:flex;flex-direction:column;align-items:center;gap:2px;"><span style="font-family:var(--font-body);font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.5);">Hello</span><em>Nancy</em></div>
+    <div class="final-cta__logo reveal reveal-delay-3"><img src="Nancy_Logo_Pink.avif" alt="Hello Nancy" class="final-cta__logo-img"></div>
   </div>
 </section>
 
@@ -2543,8 +2537,7 @@ tr:last-child .comparison__cell {
 <footer class="footer">
   <div class="container">
     <div class="footer__logo">
-      <span class="footer__logo-hello">Hello</span>
-      <span class="footer__logo-nancy">Nancy</span>
+      <img src="Nancy_Logo_Pink.avif" alt="Hello Nancy" class="footer__logo-img">
     </div>
     <p class="footer__tagline">Making self-pleasure safe, joyful, and a normal part of taking care of yourself.</p>
     <div class="footer__links">
