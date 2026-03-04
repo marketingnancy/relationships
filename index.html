@@ -1653,7 +1653,14 @@ tr:last-child .comparison__cell {
 
 .exit-popup__close svg { width: 14px; height: 14px; stroke: var(--nancy-black); }
 
-.exit-popup__emoji { font-size: 40px; margin-bottom: 16px; }
+.exit-popup__product-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 16px;
+  filter: drop-shadow(0 4px 12px rgba(233, 30, 140, 0.15));
+}
 
 .exit-popup__headline {
   font-family: var(--font-display);
@@ -2808,8 +2815,8 @@ tr:last-child .comparison__cell {
     <button class="exit-popup__close" id="exitClose" aria-label="Close popup">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
-    <div class="exit-popup__emoji">🍋</div>
-    <h3 class="exit-popup__headline">Wait — leaving without your <em>Lem?</em></h3>
+    <img src="lem-no-bg.png" alt="Lem" class="exit-popup__product-img">
+    <h3 class="exit-popup__headline">Leaving without your <em>Lem?</em></h3>
     <p class="exit-popup__body">Use code <strong>LEM25</strong> at checkout and save 25%. Go on — you've earned this.</p>
     <div class="exit-popup__code-wrap">
       <div class="exit-popup__code">LEM25</div>
