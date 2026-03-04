@@ -764,6 +764,41 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ============================================
+   MARQUEE BAR
+   ============================================ */
+.marquee-bar {
+  width: 100%;
+  overflow: hidden;
+  background: #E91E8C;
+  padding: 14px 0;
+  position: relative;
+}
+.marquee-bar__track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 35s linear infinite;
+}
+.marquee-bar__content {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.02em;
+  padding-right: 0;
+}
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-bar:hover .marquee-bar__track {
+  animation-play-state: paused;
+}
+
+/* ============================================
    SECTION 5: SOCIAL PROOF
    ============================================ */
 .social-proof {
@@ -1851,6 +1886,8 @@ tr:last-child .comparison__cell {
   .pr-cta-area .urgency-bar { justify-content: center; }
   .pr-cta-area .stock-scarcity { justify-content: center; }
   .pr-bottom-strip { justify-content: center; text-align: center; }
+  .marquee-bar { padding: 10px 0; }
+  .marquee-bar__content { font-size: 12px; }
 }
 
 /* ============================================
@@ -2377,6 +2414,18 @@ tr:last-child .comparison__cell {
     <p class="comparison__footer reveal">"Better than the Rose" isn't our tagline. It's what our customers keep telling us.</p>
   </div>
 </section>
+
+<!-- ====== MARQUEE BAR ====== -->
+<div class="marquee-bar">
+  <div class="marquee-bar__track">
+    <span class="marquee-bar__content">
+      12 Intensity Levels ✦ Whisper Quiet (<50dB) ✦ 100% Waterproof ✦ "I forgot how to walk" — Jamie R. ✦ 120-Min Battery ✦ Roommate-Proof ✦ "Better than the Rose" — 15,000+ reviews ✦ USB-C Rechargeable ✦ Discreet Packaging ✦ "Game changer. Absolute game changer." — Rachel T. ✦ Free Worldwide Shipping ✦ 30-Day Guarantee ✦ 4.7 Stars ✦ 1M+ O's Delivered ✦ TSA-Friendly ✦ "I thought that part of me was over." — Linda, 58 ✦
+    </span>
+    <span class="marquee-bar__content" aria-hidden="true">
+      12 Intensity Levels ✦ Whisper Quiet (<50dB) ✦ 100% Waterproof ✦ "I forgot how to walk" — Jamie R. ✦ 120-Min Battery ✦ Roommate-Proof ✦ "Better than the Rose" — 15,000+ reviews ✦ USB-C Rechargeable ✦ Discreet Packaging ✦ "Game changer. Absolute game changer." — Rachel T. ✦ Free Worldwide Shipping ✦ 30-Day Guarantee ✦ 4.7 Stars ✦ 1M+ O's Delivered ✦ TSA-Friendly ✦ "I thought that part of me was over." — Linda, 58 ✦
+    </span>
+  </div>
+</div>
 
 <!-- ====== SECTION 5: SOCIAL PROOF ====== -->
 <section class="social-proof">
