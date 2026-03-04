@@ -289,6 +289,25 @@ a { text-decoration: none; color: inherit; }
   margin-top: 8px;
 }
 
+/* Hero lifestyle image */
+.hero__lifestyle-img {
+  margin-top: 32px;
+}
+.hero__lifestyle-img img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+.hero__lifestyle-caption {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-style: italic;
+  color: #999;
+}
+
 /* Video Placeholder */
 .video-placeholder {
   position: relative;
@@ -1263,7 +1282,6 @@ tr:last-child .comparison__cell {
   padding: 100px 0 80px;
   background: var(--nancy-black);
   color: #fff;
-  text-align: center;
   position: relative;
   overflow: hidden;
 }
@@ -1407,6 +1425,33 @@ tr:last-child .comparison__cell {
   width: auto;
   filter: brightness(10);
   opacity: 0.3;
+}
+
+/* Final CTA grid layout */
+.final-cta__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.final-cta__image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.1);
+}
+.final-cta__content {
+  text-align: left;
+}
+.final-cta__content .final-cta__trust {
+  justify-content: flex-start;
+}
+.final-cta__content .final-cta__social-proof {
+  justify-content: flex-start;
+}
+.final-cta__content .final-cta__logo {
+  text-align: left;
 }
 
 @media (max-width: 560px) {
@@ -1954,6 +1999,12 @@ tr:last-child .comparison__cell {
   .pr-bottom-strip { justify-content: center; text-align: center; }
   .marquee-bar { padding: 10px 0; }
   .marquee-bar__content { font-size: 12px; }
+  .hero__lifestyle-img { display: none; }
+  .final-cta__grid { grid-template-columns: 1fr; gap: 32px; }
+  .final-cta__image img { max-width: 300px; margin: 0 auto; display: block; }
+  .final-cta__content { text-align: center; }
+  .final-cta__content .final-cta__trust { justify-content: center; }
+  .final-cta__content .final-cta__social-proof { justify-content: center; }
 }
 
 /* ============================================
@@ -2247,6 +2298,10 @@ tr:last-child .comparison__cell {
       <div class="hero__viewers reveal reveal-delay-3">
         <span class="social-toast__dot" style="display:inline-block;width:7px;height:7px;margin-right:6px;vertical-align:middle;"></span>
         <span id="viewerCount" style="font-size:13px;color:var(--nancy-gray);font-weight:400;"><strong style="color:var(--nancy-black)">1,243</strong> women are viewing this page right now</span>
+      </div>
+      <div class="hero__lifestyle-img reveal reveal-delay-3">
+        <img src="lem-lifestyle.jpg" alt="Lem sitting on a nightstand among skincare and candles — looks like a cute decoration" loading="lazy">
+        <span class="hero__lifestyle-caption">Spot the Lem. (Hint: your roommate won't.)</span>
       </div>
     </div>
     <div class="hero__video-wrap reveal reveal-delay-2" style="position:relative;">
@@ -2633,64 +2688,71 @@ tr:last-child .comparison__cell {
 
 <!-- ====== SECTION 7: FINAL CTA ====== -->
 <section class="final-cta">
-  <div class="container container--narrow">
-    <h2 class="final-cta__headline reveal">
-      Join 15,000+ women who stopped <em>waiting.</em>
-    </h2>
-    <p class="final-cta__sub reveal reveal-delay-1">
-      Your Lem is waiting. Here's what happens next:
-    </p>
-    <div class="final-cta__steps reveal reveal-delay-2">
-      <div class="final-cta__step">
-        <span class="final-cta__step-num">1</span>
-        <p class="final-cta__step-text">Click below and complete your order <span class="final-cta__step-note">(takes 2 minutes)</span></p>
+  <div class="container">
+    <div class="final-cta__grid">
+      <div class="final-cta__image reveal">
+        <img src="lem-closeup.jpg" alt="Lem held in a woman's palm — small, discreet, fits anywhere" loading="lazy">
       </div>
-      <div class="final-cta__step">
-        <span class="final-cta__step-num">2</span>
-        <p class="final-cta__step-text">Lem ships within 24 hours in a plain, unmarked box <span class="final-cta__step-note">(no one will know)</span></p>
-      </div>
-      <div class="final-cta__step">
-        <span class="final-cta__step-num">3</span>
-        <p class="final-cta__step-text">It arrives in 3–7 days with free shipping worldwide</p>
-      </div>
-      <div class="final-cta__step">
-        <span class="final-cta__step-num">4</span>
-        <p class="final-cta__step-text">You finally put yourself first <span class="final-cta__step-note">(prepare to wonder why you waited)</span></p>
+      <div class="final-cta__content">
+        <h2 class="final-cta__headline reveal">
+          Join 15,000+ women who stopped <em>waiting.</em>
+        </h2>
+        <p class="final-cta__sub reveal reveal-delay-1">
+          Your Lem is waiting. Here's what happens next:
+        </p>
+        <div class="final-cta__steps reveal reveal-delay-2">
+          <div class="final-cta__step">
+            <span class="final-cta__step-num">1</span>
+            <p class="final-cta__step-text">Click below and complete your order <span class="final-cta__step-note">(takes 2 minutes)</span></p>
+          </div>
+          <div class="final-cta__step">
+            <span class="final-cta__step-num">2</span>
+            <p class="final-cta__step-text">Lem ships within 24 hours in a plain, unmarked box <span class="final-cta__step-note">(no one will know)</span></p>
+          </div>
+          <div class="final-cta__step">
+            <span class="final-cta__step-num">3</span>
+            <p class="final-cta__step-text">It arrives in 3–7 days with free shipping worldwide</p>
+          </div>
+          <div class="final-cta__step">
+            <span class="final-cta__step-num">4</span>
+            <p class="final-cta__step-text">You finally put yourself first <span class="final-cta__step-note">(prepare to wonder why you waited)</span></p>
+          </div>
+        </div>
+        <a href="#" class="cta-btn cta-btn--large reveal reveal-delay-3">
+          I Deserve This — $89
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <p class="final-cta__price-context reveal reveal-delay-3">
+          <s style="color:rgba(255,255,255,0.3);font-weight:300;">$159</s>&nbsp;&nbsp;$89 — Save $70 + free mystery gift
+        </p>
+        <div class="final-cta__urgency reveal reveal-delay-3">
+          <span class="urgency-bar__dot"></span>
+          <span style="color:rgba(255,255,255,0.5);font-size:13px;">Offer ends in</span>
+          <span class="urgency-bar__timer" id="urgencyTimer2">--:--</span>
+          <span style="color:rgba(255,255,255,0.35);font-size:12px;margin-left:8px;">·</span>
+          <span style="color:rgba(255,255,255,0.35);font-size:12px;margin-left:8px;">Only <strong id="stockCount2" style="color:rgba(255,255,255,0.6);">47</strong> left</span>
+        </div>
+        <div class="final-cta__trust reveal reveal-delay-3">
+          <span class="final-cta__trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            30-Day Happiness Guarantee
+          </span>
+          <span class="final-cta__trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            100% Discreet Shipping
+          </span>
+          <span class="final-cta__trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="m7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Secure Checkout
+          </span>
+        </div>
+        <p class="final-cta__social-proof reveal reveal-delay-3">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,0.4)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          Rated 4.7 stars by 15,000+ women — someone new discovers Lem every 25 seconds
+        </p>
+        <div class="final-cta__logo reveal reveal-delay-3"><img src="Nancy_Logo_Pink.avif" alt="Hello Nancy" class="final-cta__logo-img"></div>
       </div>
     </div>
-    <a href="#" class="cta-btn cta-btn--large reveal reveal-delay-3">
-      I Deserve This — $89
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </a>
-    <p class="final-cta__price-context reveal reveal-delay-3">
-      <s style="color:rgba(255,255,255,0.3);font-weight:300;">$159</s>&nbsp;&nbsp;$89 — Save $70 + free mystery gift
-    </p>
-    <div class="final-cta__urgency reveal reveal-delay-3">
-      <span class="urgency-bar__dot"></span>
-      <span style="color:rgba(255,255,255,0.5);font-size:13px;">Offer ends in</span>
-      <span class="urgency-bar__timer" id="urgencyTimer2">--:--</span>
-      <span style="color:rgba(255,255,255,0.35);font-size:12px;margin-left:8px;">·</span>
-      <span style="color:rgba(255,255,255,0.35);font-size:12px;margin-left:8px;">Only <strong id="stockCount2" style="color:rgba(255,255,255,0.6);">47</strong> left</span>
-    </div>
-    <div class="final-cta__trust reveal reveal-delay-3">
-      <span class="final-cta__trust-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        30-Day Happiness Guarantee
-      </span>
-      <span class="final-cta__trust-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        100% Discreet Shipping
-      </span>
-      <span class="final-cta__trust-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="m7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        Secure Checkout
-      </span>
-    </div>
-    <p class="final-cta__social-proof reveal reveal-delay-3">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,0.4)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
-      Rated 4.7 stars by 15,000+ women — someone new discovers Lem every 25 seconds
-    </p>
-    <div class="final-cta__logo reveal reveal-delay-3"><img src="Nancy_Logo_Pink.avif" alt="Hello Nancy" class="final-cta__logo-img"></div>
   </div>
 </section>
 
