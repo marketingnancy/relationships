@@ -291,7 +291,8 @@ a { text-decoration: none; color: inherit; }
 
 /* Hero lifestyle image */
 .hero__lifestyle-img {
-  margin-top: 32px;
+  margin-top: 0;
+  margin-bottom: 24px;
 }
 .hero__lifestyle-img img {
   width: 100%;
@@ -1999,7 +2000,8 @@ tr:last-child .comparison__cell {
   .pr-bottom-strip { justify-content: center; text-align: center; }
   .marquee-bar { padding: 10px 0; }
   .marquee-bar__content { font-size: 12px; }
-  .hero__lifestyle-img { display: none; }
+  .hero__lifestyle-img { text-align: center; margin-top: 0; margin-bottom: 24px; }
+  .hero__lifestyle-img img { max-width: 220px; margin: 0 auto; }
   .final-cta__grid { grid-template-columns: 1fr; gap: 32px; }
   .final-cta__image img { max-width: 300px; margin: 0 auto; display: block; }
   .final-cta__content { text-align: center; }
@@ -2280,6 +2282,10 @@ tr:last-child .comparison__cell {
 <section class="hero" id="hero">
   <div class="container hero__grid">
     <div class="hero__content">
+      <div class="hero__lifestyle-img reveal">
+        <img src="lem-lifestyle.png" alt="Lem sitting on a nightstand among skincare and candles — looks like a cute decoration" loading="lazy">
+        <span class="hero__lifestyle-caption">Spot the Lem. (Hint: your roommate won't.)</span>
+      </div>
       <div class="hero__eyebrow reveal">15,000+ women already know</div>
       <h1 class="hero__headline reveal reveal-delay-1">
         She's not fine. She's just tired of <em>explaining.</em>
@@ -2298,10 +2304,6 @@ tr:last-child .comparison__cell {
       <div class="hero__viewers reveal reveal-delay-3">
         <span class="social-toast__dot" style="display:inline-block;width:7px;height:7px;margin-right:6px;vertical-align:middle;"></span>
         <span id="viewerCount" style="font-size:13px;color:var(--nancy-gray);font-weight:400;"><strong style="color:var(--nancy-black)">1,243</strong> women are viewing this page right now</span>
-      </div>
-      <div class="hero__lifestyle-img reveal reveal-delay-3">
-        <img src="lem-lifestyle.png" alt="Lem sitting on a nightstand among skincare and candles — looks like a cute decoration" loading="lazy">
-        <span class="hero__lifestyle-caption">Spot the Lem. (Hint: your roommate won't.)</span>
       </div>
     </div>
     <div class="hero__video-wrap reveal reveal-delay-2" style="position:relative;">
