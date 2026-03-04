@@ -188,6 +188,7 @@ a { text-decoration: none; color: inherit; }
 .hero {
   padding: 60px 0 40px;
   background: var(--nancy-cream-dark);
+  overflow-x: hidden;
 }
 
 .hero__grid {
@@ -2034,14 +2035,17 @@ tr:last-child .comparison__cell {
   .nav__logo-img { height: 28px; }
   .mute-toggle { width: 36px; height: 36px; bottom: 8px; right: 8px; }
   .mute-toggle svg { width: 18px; height: 18px; }
-  .hero { padding: 32px 0; }
-  .hero__grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
-  .hero__content { order: 1; align-items: center; }
-  .hero__video-wrap { max-width: 280px; order: 2; }
-  .hero__subhead { max-width: 100%; }
-  .hero__trust-row { justify-content: center; }
+  .hero { padding: 24px 0 32px; }
+  .hero__grid { grid-template-columns: 1fr; gap: 24px; text-align: center; padding: 0 16px; max-width: 100%; box-sizing: border-box; }
+  .hero__video-wrap { order: -1; max-width: 260px; margin: 0 auto; }
+  .hero__content { order: 2; align-items: center; padding: 0; }
+  .hero__headline { font-size: 28px; word-wrap: break-word; overflow-wrap: break-word; }
+  .hero__subhead { font-size: 15px; max-width: 100%; padding: 0; }
+  .hero__proof-pill { margin-left: auto; margin-right: auto; font-size: 12px; }
+  .hero__cta { width: 100%; max-width: 320px; font-size: 15px; padding: 14px 24px; }
+  .hero__trust-row { justify-content: center; font-size: 11px; gap: 12px; }
   .hero__viewers { justify-content: center; }
-  .hero__proof-pill { margin-left: auto; margin-right: auto; }
+  .hero__label { font-size: 12px; }
   .talking-stage__video-wrap .video-placeholder { max-width: 260px; max-height: 440px; }
   .social-stats { flex-direction: column; gap: 20px; }
   .social-stats__divider { width: 40px; height: 1px; }
@@ -2061,6 +2065,12 @@ tr:last-child .comparison__cell {
   .pr-bottom-strip { justify-content: center; text-align: center; }
   .marquee-bar { padding: 10px 0; }
   .marquee-bar__content { font-size: 12px; }
+}
+
+@media (max-width: 380px) {
+  .hero__headline { font-size: 24px; }
+  .hero__video-wrap { max-width: 220px; }
+  .hero__cta { font-size: 14px; padding: 12px 20px; }
 }
 
 /* ============================================
