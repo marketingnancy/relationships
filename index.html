@@ -802,67 +802,55 @@ a { text-decoration: none; color: inherit; }
    SECTION 5: SOCIAL PROOF
    ============================================ */
 .social-proof {
-  padding: 100px 0;
+  padding: 60px 0;
   background: var(--nancy-cream-dark);
 }
 
-.social-proof__intro {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Nancy logo placeholder */
-.nancy-logo-placeholder {
-  display: inline-flex;
+/* Stats strip */
+.social-stats {
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 140px;
-  height: 48px;
-  background: var(--nancy-cream-dark);
-  border-radius: 8px;
-  font-family: var(--font-display);
-  font-size: 22px;
-  color: var(--nancy-black);
-  margin: 0 auto 32px;
-  border: 1px dashed var(--nancy-gray-light);
+  gap: 48px;
+  margin-bottom: 32px;
 }
 
-.nancy-logo-placeholder em { font-style: italic; color: var(--nancy-pink); }
+.social-stats__item { text-align: center; }
 
-/* Stats row */
-.stats-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: 600px;
-  margin: 0 auto 56px;
-  text-align: center;
-}
-
-.stat__number {
+.social-stats__number {
   font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 38px);
+  font-size: 40px;
   font-weight: 700;
-  color: var(--nancy-pink);
+  color: #E91E8C;
   line-height: 1.1;
+  display: block;
 }
 
-.stat__label {
+.social-stats__label {
   font-size: 13px;
   color: var(--nancy-gray);
   margin-top: 4px;
   font-weight: 400;
+  display: block;
 }
 
-/* Press logos placeholder */
+.social-stats__divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(0,0,0,0.1);
+  flex-shrink: 0;
+}
+
+/* Press logos */
 .press-logos {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 32px;
-  margin-bottom: 56px;
-  padding-bottom: 56px;
+  margin-bottom: 32px;
+  padding: 24px 0;
+  border-top: 1px solid rgba(42,36,32,0.06);
   border-bottom: 1px solid rgba(42,36,32,0.06);
 }
 
@@ -878,43 +866,118 @@ a { text-decoration: none; color: inherit; }
 
 .press-logo:hover { opacity: 1; }
 
-/* Testimonial cards */
-.testimonials {
+/* Reviews headline */
+.reviews__headline {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--nancy-black);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* Review cards */
+.reviews-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  max-width: 720px;
-  margin: 0 auto;
+  margin-bottom: 32px;
 }
 
-.testimonial {
-  background: var(--nancy-cream);
+.review-card {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,0,0,0.06);
   border-radius: 16px;
-  padding: 32px;
-  border: 1px solid rgba(42,36,32,0.04);
+  padding: 28px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.testimonial__stars {
-  display: flex;
-  gap: 2px;
-  color: var(--nancy-pink);
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.review-card__persona {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.review-card__stars {
+  color: #E91E8C;
   font-size: 14px;
   margin-bottom: 12px;
 }
 
-.testimonial__text {
-  font-size: 16px;
-  line-height: 1.65;
-  color: var(--nancy-black);
+.review-card__quote {
+  font-family: var(--font-body);
+  font-size: 17px;
   font-style: italic;
-  margin-bottom: 12px;
+  color: #1A1A1A;
+  line-height: 1.6;
+  margin-bottom: 14px;
   font-weight: 300;
 }
 
-.testimonial__attr {
+.review-card__footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.review-card__name {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+}
+
+.review-card__badge {
+  display: inline-block;
+  font-size: 11px;
+  background: #E91E8C;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* Trustpilot proof line */
+.trustpilot-line {
+  text-align: center;
   font-size: 13px;
   color: var(--nancy-gray);
-  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.trustpilot-line .tp-star { color: #00B67A; }
+
+/* Section CTA */
+.social-proof__cta {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Live purchases nudge */
+.live-purchases {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--nancy-gray);
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00C851;
+  animation: pulse-dot 1.5s ease infinite;
+  flex-shrink: 0;
 }
 
 /* ============================================
@@ -1856,7 +1919,7 @@ tr:last-child .comparison__cell {
 
   /* pr-grid is already two-column by default */
 
-  .testimonials { grid-template-columns: 1fr 1fr; }
+  .reviews-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (min-width: 1024px) {
@@ -1876,9 +1939,12 @@ tr:last-child .comparison__cell {
   .hero__video-wrap { margin-top: 8px; }
   .hero__video-wrap .video-placeholder { max-width: 260px; max-height: 440px; }
   .talking-stage__video-wrap .video-placeholder { max-width: 260px; max-height: 440px; }
-  .stats-row { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .social-stats { flex-direction: column; gap: 20px; }
+  .social-stats__divider { width: 40px; height: 1px; }
+  .reviews-grid { grid-template-columns: 1fr; }
   .press-logos { gap: 20px; }
   .press-logo { font-size: 12px; }
+  .reviews__headline { font-size: 26px; }
   .pr-grid { grid-template-columns: 1fr; gap: 24px; }
   .pr-features { flex-wrap: wrap; gap: 12px; }
   .pr-feature { flex: 0 0 calc(50% - 6px); }
@@ -2430,21 +2496,20 @@ tr:last-child .comparison__cell {
 <!-- ====== SECTION 5: SOCIAL PROOF ====== -->
 <section class="social-proof">
   <div class="container">
-    <div class="social-proof__intro reveal">
-      <div class="nancy-logo-placeholder" style="border:none;background:none;"><img src="Nancy_Logo_Pink.avif" alt="Hello Nancy" style="height:40px;width:auto;"></div>
-    </div>
-    <div class="stats-row reveal">
-      <div class="stat">
-        <div class="stat__number">4.7★</div>
-        <div class="stat__label">across 15,000+ reviews</div>
+    <div class="social-stats reveal">
+      <div class="social-stats__item">
+        <span class="social-stats__number">4.7★</span>
+        <span class="social-stats__label">across 15,000+ reviews</span>
       </div>
-      <div class="stat">
-        <div class="stat__number">1M+</div>
-        <div class="stat__label">O's delivered (and counting)</div>
+      <div class="social-stats__divider"></div>
+      <div class="social-stats__item">
+        <span class="social-stats__number">1M+</span>
+        <span class="social-stats__label">O's delivered</span>
       </div>
-      <div class="stat">
-        <div class="stat__number">25s</div>
-        <div class="stat__label">someone new discovers Lem</div>
+      <div class="social-stats__divider"></div>
+      <div class="social-stats__item">
+        <span class="social-stats__number">25s</span>
+        <span class="social-stats__label">someone new discovers Lem</span>
       </div>
     </div>
     <div class="press-logos reveal">
@@ -2456,27 +2521,45 @@ tr:last-child .comparison__cell {
       <span class="press-logo">SheKnows</span>
       <span class="press-logo">Glamour</span>
     </div>
-    <div class="testimonials">
-      <div class="testimonial reveal">
-        <div class="testimonial__stars">★★★★★</div>
-        <p class="testimonial__text">"Better than any ex I've ever had. 12 settings and every single one of them shows up on time."</p>
-        <p class="testimonial__attr">— Verified Buyer, age 29</p>
+    <h2 class="reviews__headline reveal">Don't take our word for it.</h2>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-card__persona">First-time explorer</div>
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__quote">"Better than any ex I've ever had. 12 settings and every single one of them shows up on time."</p>
+        <div class="review-card__footer">
+          <span class="review-card__name">— Sarah K., 29</span>
+          <span class="review-card__badge">Verified buyer</span>
+        </div>
       </div>
-      <div class="testimonial reveal reveal-delay-1">
-        <div class="testimonial__stars">★★★★★</div>
-        <p class="testimonial__text">"I'm 47, divorced, and honestly thought that part of me was over. It's not. It's so not."</p>
-        <p class="testimonial__attr">— Verified Buyer, age 47</p>
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-card__persona">The reawakened woman</div>
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__quote">"I'm 47, divorced, and honestly thought that part of me was over. It's not. It's so not."</p>
+        <div class="review-card__footer">
+          <span class="review-card__name">— Linda M., 47</span>
+          <span class="review-card__badge">Verified buyer</span>
+        </div>
       </div>
-      <div class="testimonial reveal reveal-delay-2">
-        <div class="testimonial__stars">★★★★★</div>
-        <p class="testimonial__text">"Looks like skincare on my shelf. My roommate asked if it was a new face tool. I said yes."</p>
-        <p class="testimonial__attr">— Verified Buyer, age 26</p>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-card__persona">The discreet diva</div>
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__quote">"My roommate complimented it as a 'cute decoration.' If only she knew."</p>
+        <div class="review-card__footer">
+          <span class="review-card__name">— Priya D., 24</span>
+          <span class="review-card__badge">Verified buyer</span>
+        </div>
       </div>
-      <div class="testimonial reveal reveal-delay-3">
-        <div class="testimonial__stars">★★★★★</div>
-        <p class="testimonial__text">"I came. I saw. I lemoned. Told all my girlfriends immediately."</p>
-        <p class="testimonial__attr">— Verified Buyer, age 33</p>
-      </div>
+    </div>
+    <p class="trustpilot-line reveal"><span class="tp-star">★</span> Rated 4.7/5 on Trustpilot · 1,300+ independent reviews</p>
+    <div class="social-proof__cta reveal">
+      <a href="#cta" class="cta-btn">
+        See Why 15,000 Women Switched →
+      </a>
+    </div>
+    <div class="live-purchases reveal">
+      <span class="live-dot"></span>
+      <span><strong id="socialSoldWeek">842</strong> women ordered Lem this week</span>
     </div>
   </div>
 </section>
